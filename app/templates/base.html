@@ -1,0 +1,28 @@
+<html>
+	<head>
+		{% if title %}
+		<title>
+			{{title}} - Gregslist
+		</title>
+		{% else %}
+		<title>
+			Welcome to Gregslist
+		</title>
+		{% endif %}
+	</head>
+	<body>
+		<div><a href="/index">Gregslist Home</a></div>
+		<hr>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul>
+					{% for message in messages %}
+						<li>{{message}}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>

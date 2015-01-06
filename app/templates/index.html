@@ -1,10 +1,9 @@
-<html>
-	<head>
-		<title>
-			{{title}} - Gregslist
-		</title>
-	</head>
-	<body>
-		<h1>Hello, {{user.nickname}}!</h1>
-	</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+	<h1>Hello, {{user.nickname}}!</h1>
+	<h2>Your Listings</h2>
+	{% for listing in listings %}
+	<div><b>{{listing.title}}</b></div>
+	<div>{{listing.description}}</div>
+	{% endfor %}
+{% endblock %}
